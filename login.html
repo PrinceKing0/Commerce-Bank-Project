@@ -1,105 +1,94 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
-    <title>Signin Template · Bootstrap v5.2</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Thuy">
 
-    
+<meta name="description" content="" />
+<meta name="keywords" content="" />
 
-    
+<!-- Google fonts: -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<link href="css/signin.css" rel="stylesheet">
+ <!-- Library & Files: -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="images/orange.ico">
+<link rel="stylesheet" href="css/tiny-slider.css">
+<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="css/glightbox.min.css">
+<link rel="stylesheet" href="css/style.css"> 
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/signin.css">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+<title>OrangeDoorhinge &mdash; Login </title>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  
+  <body class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src=images/img2.jpg
+            class="img-fluid" alt="img2">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3">Sign in</p>
+            </div>
+  
+            <div class="divider d-flex align-items-center my-4">
+            </div>
+  
+            <div class="form-outline mb-4">
+              <input type="email" id="loginName" class="form-control form-control-lg"
+                placeholder="Enter a valid email or username" />
+              <label class="form-label" for="loginName">Email or username</label>
+            </div>
+  
+            <div class="form-outline mb-3">
+              <input type="password" id="loginPw" class="form-control form-control-lg"
+                placeholder="Enter password" />
+              <label class="form-label" for="loginPw">Password</label>
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="remember" />
+                <label class="form-check-label" for="remember">
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                  class="link-danger">Register Here</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
     
-<main class="form-signin w-100 m-auto">
-  <form>
-    <img class="mb-4" src="images/cat.ico" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-success">
+      <div class="text-white mb-3 mb-md-0">
+        &copy; Designed by OrangeDoorhinge 2022
+      </div>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
-  </form>
-</main>
-
-
-    
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/navbar.js"></script>
+      <script src="js/counter.js"></script>
   </body>
 </html>
