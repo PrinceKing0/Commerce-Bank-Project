@@ -1,6 +1,6 @@
 /* Root variables: https://getbootstrap.com/docs/5.0/customize/css-variables/ */
 
-/* :root {
+:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -24,15 +24,8 @@
   --bs-dark: #212529;
   --bs-font-sans-serif: "Roboto", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); } */
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); }
 
-
-/* #navigation {
-  background-color: #006747;}  */
-
-/* .container-fluid {
-  padding: 3% 15%;} */
- 
 
 *,
 *::before,
@@ -9165,24 +9158,24 @@ textarea {
   height: auto !important;
   border-radius: 7px !important; }
 
-.hero {
+.background {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ccc; }
-  .hero, .hero > .container > .row {
+  .background, .background > .container > .row {
     height: 100vh;
     min-height: 780px; }
     @media (max-width: 991.98px) {
-      .hero, .hero > .container > .row {
+      .background, .background > .container > .row {
         min-height: auto !important;
         height: auto !important;
         padding-top: 4rem;
         padding-bottom: 4rem; } }
-  .hero.overlay {
+  .background.overlay {
     position: relative;
     z-index: 1; }
-    .hero.overlay:before {
+    .background.overlay:before {
       background-color: rgba(0, 0, 0, 0.4);
       content: "";
       position: absolute;
@@ -9191,16 +9184,16 @@ textarea {
       bottom: 0;
       top: 0;
       z-index: 1; }
-  .hero > .container {
+  .background > .container {
     position: relative;
     z-index: 2; }
-  .hero .heading {
+  .background .heading {
     color: #000;
     font-size: 60px;
     font-weight: 700;
     line-height: 1; }
     @media (max-width: 767.98px) {
-      .hero .heading {
+      .background .heading {
         font-size: 40px; } }
 
 .subheading-white {
@@ -9881,7 +9874,7 @@ blockquote {
 
 .site-footer {
   padding: 70px 0;
-  background-color: #222; }
+  background-color: #006747; }
   .site-footer a {
     position: relative;
     display: inline-block;

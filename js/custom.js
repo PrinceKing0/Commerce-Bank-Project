@@ -182,11 +182,6 @@
 		selector: '.glightbox'
 	});
 
-	flatpickr("#arrival", {});
-	flatpickr("#departure", {});
-
-
-
 	var jsAmount = document.querySelectorAll('.js-amount');
 	var inputField = document.querySelector("[name=donate-value");
 	Array.from(jsAmount).forEach(link => {
@@ -196,7 +191,6 @@
 		});
 	});
 
-	
 	
 
 })()
