@@ -1,5 +1,3 @@
-/* Root variables: https://getbootstrap.com/docs/5.0/customize/css-variables/ */
-
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -505,17 +503,7 @@ progress {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
     max-width: 1320px; } }
 
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) / -2);
-  margin-left: calc(var(--bs-gutter-x) / -2); }
+
   .row > * {
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -525,10 +513,7 @@ progress {
     padding-left: calc(var(--bs-gutter-x) / 2);
     margin-top: var(--bs-gutter-y); }
 
-.col {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 0%;
-  flex: 1 0 0%; }
+
 
 .row-cols-auto > * {
   -webkit-box-flex: 0;
@@ -8646,29 +8631,13 @@ textarea.form-control-lg {
       background: transparent;
       border: 2px solid #fff; }
 
-.logo {
-  font-size: 24px;
-  color: #fff;
-  font-weight: 700; }
-  .logo:hover {
-    color: #fff;
-    opacity: .8; }
 
-.site-nav {
-  position: absolute;
-  top: 40px;
-  z-index: 9;
-  width: 100%; }
 
-.site-nav {
-  padding-bottom: 20px; }
   .site-nav h1, .site-nav .h1 {
     margin: 0;
     padding: 0;
     font-size: 24px; }
-  .site-nav .site-navigation .site-menu {
-    display: inline-block;
-    margin-bottom: 0; }
+
     .site-nav .site-navigation .site-menu > li {
       display: inline-block; }
       .site-nav .site-navigation .site-menu > li > a {
@@ -8968,14 +8937,6 @@ textarea.form-control-lg {
     padding-top: 0px !important;
     padding-bottom: 0px !important; }
 
-/* Burger */
-.burger {
-  width: 28px;
-  height: 32px;
-  cursor: pointer;
-  position: relative; }
-  .burger.light:before, .burger.light span, .burger.light:after {
-    background: #fff; }
 
 .burger:before, .burger span, .burger:after {
   width: 100%;
@@ -9033,11 +8994,7 @@ textarea.form-control-lg {
 .burger:focus {
   outline: none; }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  overflow-x: hidden; }
+
   body:before {
     content: "";
     position: fixed;
@@ -9066,16 +9023,7 @@ a, .btn {
   transition: .3s all ease;
   text-decoration: none; }
 
-.btn {
-  padding: 13px 30px;
-  border-radius: 30px;
-  border-color: none;
-  font-size: 14px;
-  outline: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  text-transform: uppercase;
-  letter-spacing: .1rem; }
+
   .btn.active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none;
@@ -9131,25 +9079,7 @@ a, .btn {
 textarea {
   height: auto !important; }
 
-#overlayer {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 7100;
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; }
 
-.loader {
-  z-index: 7700;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
 
 .relative {
   position: relative; }
@@ -9158,43 +9088,7 @@ textarea {
   height: auto !important;
   border-radius: 7px !important; }
 
-.background {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #ccc; }
-  .background, .background > .container > .row {
-    height: 100vh;
-    min-height: 780px; }
-    @media (max-width: 991.98px) {
-      .background, .background > .container > .row {
-        min-height: auto !important;
-        height: auto !important;
-        padding-top: 4rem;
-        padding-bottom: 4rem; } }
-  .background.overlay {
-    position: relative;
-    z-index: 1; }
-    .background.overlay:before {
-      background-color: rgba(0, 0, 0, 0.4);
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      z-index: 1; }
-  .background > .container {
-    position: relative;
-    z-index: 2; }
-  .background .heading {
-    color: #000;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1; }
-    @media (max-width: 767.98px) {
-      .background .heading {
-        font-size: 40px; } }
+
 
 .subheading-white {
   display: inline-block;
@@ -9207,27 +9101,6 @@ textarea {
   color: #59886b;
   font-weight: bold; }
 
-.section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  position: relative; }
-  .section .subheading {
-    display: inline-block;
-    letter-spacing: .2rem;
-    padding: 7px 20px;
-    border-radius: 30px;
-    background-color: rgba(255, 200, 92, 0.1);
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #ffc85c;
-    font-weight: bold; }
-  .section .heading {
-    font-size: 50px;
-    font-weight: bold;
-    color: #59886b; }
-    @media (max-width: 767.98px) {
-      .section .heading {
-        font-size: 40px; } }
 
 .sec-form-search .form {
   position: relative;
@@ -9771,8 +9644,7 @@ blockquote {
   .flip-section.secondary-bg:before {
     background: rgba(33, 37, 41, 0.5); }
 
-.field-icon {
-  position: relative; }
+
   .field-icon > span {
     top: 50%;
     left: 20px;
@@ -9872,9 +9744,7 @@ blockquote {
   border: 2px solid #59886b;
   padding: 20px; }
 
-.site-footer {
-  padding: 70px 0;
-  background-color: #006747; }
+
   .site-footer a {
     position: relative;
     display: inline-block;
@@ -9885,9 +9755,7 @@ blockquote {
         background: #59886b; }
   .site-footer .btn:before {
     display: none; }
-  .site-footer .widget {
-    margin-bottom: 40px;
-    display: block; }
+  
     .site-footer .widget h3, .site-footer .widget .h3 {
       font-size: 18px;
       font-weight: bold;
@@ -9927,9 +9795,4 @@ blockquote {
         background: #72a284;
         color: #fff; }
 
-.copyright {
-  color: rgba(255, 255, 255, 0.7); }
-  .copyright a {
-    color: rgba(255, 255, 255, 0.5); }
-    .copyright a:hover {
-      color: #fff; }
+
