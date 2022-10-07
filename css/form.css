@@ -1,0 +1,94 @@
+.form-control {
+  height: 54px;
+  border-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+.form-control:active,
+.form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+.form-control::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+.form-control::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+.form-control:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+.form-control:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.field-icon > span {
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  font-weight: bold;
+}
+.field-icon input[type="text"] {
+  padding-left: 40px !important;
+}
+
+.donation-form {
+  text-align: center;
+}
+.donation-form h3,
+.donation-form .h3 {
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.donation-form .form-control {
+  border: 1px solid #efefef;
+}
+
+.more2 [class^="icon-"] {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.custom-pagination a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  border-radius: 50%;
+  background: rgba(89, 136, 107, 0.1);
+  color: #59886b;
+  text-align: center;
+}
+.custom-pagination a:hover,
+.custom-pagination a.active {
+  background: #59886b;
+  color: #fff;
+}
+
+.amount span {
+  color: #ccc;
+  border: 2px solid #e1e2e7;
+  padding: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.amount input[type="radio"] {
+  display: none;
+}
+
+.amount input[type="radio"]:checked + span {
+  color: #59886b;
+  border: 2px solid #59886b;
+  padding: 20px;
+}
