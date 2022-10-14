@@ -27,10 +27,12 @@ if (! mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPw);
 
-mysqli_stmt_execute($stmt);
-
-echo "Record Saved";
-//echo $_SERVER['DOCUMENT_ROOT'];
-header("Location: /index.html");
+try {
+    mysqli_stmt_execute($stmt);
+    echo "Record Saved";
+    header("Location: /index.html");
+ } catch (mysqli_sql_exception $e) {
+    echo $e;
+ }
 
 ?>
