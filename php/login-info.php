@@ -3,7 +3,9 @@
 $fName = $_POST["fName"];
 $lName = $_POST["lName"];
 $loginName = $_POST["eMail"];
-$loginPw = password_hash($_POST["pWord"], PASSWORD_DEFAULT);
+$loginPw = $_POST["pWord"];
+$loginPw2 = $_POST["pWordDup"];
+$loginPwHash = password_hash($_POST["pWord"], PASSWORD_DEFAULT);
 
 $host = "localhost";
 $dbname = "classproj_db1";
@@ -25,14 +27,40 @@ if (! mysqli_stmt_prepare($stmt, $sql)) {
     die(mysqli_error($conn));
 }
 
-mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPw);
+mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPwHash);
 
-try {
-    mysqli_stmt_execute($stmt);
-    echo "Record Saved";
-    header("Location: /index.html");
- } catch (mysqli_sql_exception $e) {
-    echo $e;
- }
+if (!(strlen($loginPw) >= 8)) {
+    echo "Password too short.";
+}
+
+else if (!(preg_match('/[A-Z]/', $loginPw) > 0)) {
+    echo "Password too short.";
+}
+
+else if (!(preg_match('/[a-z]/', $loginPw) > 0)) {
+    echo "Password too short.";
+}
+
+else if (!(preg_match('`[0-9]`',$loginPw) > 0)) {
+    echo "Password too short.";
+}
+
+else if ($loginPw != $loginPw2) {
+    echo "Passwords don't match.";
+}
+
+else {
+    try {
+        mysqli_stmt_execute($stmt);
+        echo "Record Saved";
+        header("Location: /index.php");
+    }
+    catch (Exception $e) {
+        if ($e->getCode() == 1062) {
+            echo "Duplicate entry.", "<br>";
+        }
+        echo $e->getCode();
+    }
+}
 
 ?>
