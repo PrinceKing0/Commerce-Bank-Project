@@ -38,7 +38,7 @@
       </div>
 
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form action="php\login-verify.php" id="signin" method="post">
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Sign in</p>
           </div>
@@ -47,13 +47,13 @@
           </div>
 
           <div class="form-outline mb-4">
-            <input type="email" id="loginName" class="form-control form-control-lg"
+            <input type="email" id="loginName" name="loginName" class="form-control form-control-lg"
               placeholder="Enter a valid email or username" />
             <label class="form-label" for="loginName">Email or username</label>
           </div>
 
           <div class="form-outline mb-3">
-            <input type="password" id="loginPw" class="form-control form-control-lg" placeholder="Enter password" />
+            <input type="password" id="loginPw" name="loginPw" class="form-control form-control-lg" placeholder="Enter password" />
             <label class="form-label" for="loginPw">Password</label>
           </div>
 

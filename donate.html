@@ -1,0 +1,163 @@
+<?php
+session_start();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Thuy">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<!-- Google fonts: -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+ 	<!-- Library & Files: -->
+  	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="icon" href="images/orange.ico">
+	<link rel="stylesheet" href="css/styles.css"> 
+	<link rel="stylesheet" href="css/navbar.css"> 
+	<link rel="stylesheet" href="css/mobile.css"> 
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/glightbox.min.css">
+
+	<title>OrangeDoorhinge &mdash; Home </title>
+</head>
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<div class="background overlay" style="background-image: url('images/img1.jpg')">
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+
+				<div class="col-lg-5">
+					<form action="#" class="bg-white p-5 rounded donation-form" data-aos="fade-up">
+						<h3>Quick Donation Form</h3>
+						<div class="form-field mb-3">
+							<label for="amount-1" class="amount js-amount" data-value="1.00">
+								<input type="radio" id="amount-1" name="radio-amount" checked="true">
+								<span>$1</span>
+							</label>
+
+							<label for="amount-2" class="amount js-amount" data-value="5.00">
+								<input type="radio" id="amount-2" name="radio-amount">
+								<span>$5</span>
+							</label>
+							<label for="amount-3" class="amount js-amount" data-value="25.00">
+								<input type="radio" id="amount-3" name="radio-amount" >
+								<span>$25</span>
+							</label>
+							<label for="amount-4" class="amount js-amount" data-value="100.00">
+								<input type="radio" id="amount-4" name="radio-amount">
+								<span>$100</span>
+							</label>
+
+						</div>
+						<div class="field-icon">
+							<span>$</span>
+							<input type="text" placeholder="0.00" class="form-control px-4" name="donate-value" value="1.00">
+						</div>
+						<div class="form-field mb-3">
+							<input type="text" placeholder="Name" class="form-control px-4">
+							<input type="address" placeholder="Billing Address" class="form-control px-4">
+						</div>
+
+						<input type="submit" value="Donate now" class="btn btn-secondary w-100">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
+					<div class="widget">
+						<h3>Navigation</h3>
+						<ul class="list-unstyled float-left links">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Login</a></li>
+							<li><a href="#">Funderaisers</a></li>
+
+						</ul>
+					</div> <!-- /.widget -->
+				</div> <!-- /.col-lg-3 -->
+
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
+					<div class="widget">
+						<h3>Popular Funderaisers</h3>
+						<ul class="list-unstyled float-left links">
+							<li><a href="#">st here</a></li>
+							<li><a href="#">st here</a></li>
+						</ul>
+					</div> 
+				</div> 
+
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
+					<div class="widget">
+						<h3>Account</h3>
+						<ul class="list-unstyled float-left links">
+							<li><a href="#">Create an account</a></li>
+							<li><a href="#">Profile and Settings</a></li>
+						</ul>
+					</div> 
+				</div> 
+
+
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
+					<div class="widget">
+						<h3>Contact</h3>
+						<address>123 Bla Bla Rd. Kansas City, MO</address>
+						<ul class="list-unstyled links mb-4">
+							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+							<li><a href="mailto:info@mydomain.com">info@domain.com</a></li>
+						</ul>
+
+					</div> 
+				</div> 
+
+			</div> 
+
+
+			<div class="row mt-5">
+				<div class="col-12 text-center">
+					<p class="copyright">&copy; Designed by OrangeDoorhinge 2022
+					</p>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.site-footer -->
+
+
+	<!-- Preloader -->
+	<div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/glightbox.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
