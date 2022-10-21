@@ -30,23 +30,23 @@ if (! mysqli_stmt_prepare($stmt, $sql)) {
 mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPwHash);
 
 if (!(strlen($loginPw) >= 8)) {
-    echo "Password too short.";
+    header("Location: /signin-passinvalid.html");
 }
 
 else if (!(preg_match('/[A-Z]/', $loginPw) > 0)) {
-    echo "Password too short.";
+    header("Location: /signin-passinvalid.html");
 }
 
 else if (!(preg_match('/[a-z]/', $loginPw) > 0)) {
-    echo "Password too short.";
+    header("Location: /signin-passinvalid.html");
 }
 
 else if (!(preg_match('`[0-9]`',$loginPw) > 0)) {
-    echo "Password too short.";
+    header("Location: /signin-passinvalid.html");
 }
 
 else if ($loginPw != $loginPw2) {
-    echo "Passwords don't match.";
+    header("Location: /signin-passinvalid.html");
 }
 
 else {
