@@ -75,17 +75,17 @@ session_start();
 		<div class="container">
 			<div class="row align-items-center justify-content-between">
 				<div class="col-lg-6 text-left">
-					<span class="subheading-white text-white mb-3" data-aos="fade-up">Funderaiser</span>
+					<span class="subheading-white text-white mb-3" data-aos="fade-up">Fundraisers</span>
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Give a helping hand to those who need it!</h1>
 					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
 					<p data-aos="fade-up"  data-aos-delay="100">
 						<a href="#" class="btn btn-primary me-4 d-inline-flex align-items-center"> <span class="icon-attach_money me-2"></span><span>Donate Now</span></a> 
-						<a href="#" class="text-white glightbox d-inline-flex align-items-center"><span class=""></span><span>Create a funderaiser</span></a>
+						<a href="#" class="text-white glightbox d-inline-flex align-items-center"><span class=""></span><span>Create a fundraiser</span></a>
 					</p>		
 					
 				</div>
 
-				<div class="col-lg-5">
+				<!-- <div class="col-lg-5">
 					<form action="#" class="bg-white p-5 rounded donation-form" data-aos="fade-up">
 						<h3>Quick Donation Form</h3>
 						<div class="form-field mb-3">
@@ -119,7 +119,7 @@ session_start();
 
 						<input type="submit" value="Donate now" class="btn btn-secondary w-100">
 					</form>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -131,9 +131,9 @@ session_start();
 		<div class="container">
 			<div class="row justify-content-center mb-5">
 				<div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-					<span class="subheading mb-3">Funderaisers</span>
-					<h2 class="heading">Featured Funderaisers</h2>
-					<p>Funderaisers created by users will be displayed here.</p>
+					<span class="subheading mb-3">Fundraisers</span>
+					<h2 class="heading">Featured Fundraisers</h2>
+					<p>Fundraisers created by users will be displayed here.</p>
 
 					<div id="features-slider-nav" class="mt-5 d-flex justify-content-center">
 						<button  class="btn btn-primary prev d-flex align-items-center me-2" data-controls="prev"> <span class="icon-chevron-left"></span> <span class="ms-3">Prev</span></button>
@@ -155,7 +155,7 @@ session_start();
 						<ul class="list-unstyled float-left links">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Login</a></li>
-							<li><a href="#">Funderaisers</a></li>
+							<li><a href="#">Fundraisers</a></li>
 
 						</ul>
 					</div> <!-- /.widget -->
@@ -163,7 +163,7 @@ session_start();
 
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 					<div class="widget">
-						<h3>Popular Funderaisers</h3>
+						<h3>Popular Fundraisers</h3>
 						<ul class="list-unstyled float-left links">
 							<li><a href="#">st here</a></li>
 							<li><a href="#">st here</a></li>
