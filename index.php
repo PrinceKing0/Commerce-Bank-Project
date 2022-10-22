@@ -77,7 +77,7 @@ session_start();
 				<div class="col-lg-6 text-left">
 					<span class="subheading-white text-white mb-3" data-aos="fade-up">Fundraisers</span>
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Give a helping hand to those who need it!</h1>
-					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
+					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">"There is no exercise better for the heart than reaching down and lifting people up."</p>
 					<p data-aos="fade-up"  data-aos-delay="100">
 						<a href="#" class="btn btn-primary me-4 d-inline-flex align-items-center"> <span class="icon-attach_money me-2"></span><span>Donate Now</span></a> 
 						<a href="#" class="text-white glightbox d-inline-flex align-items-center"><span class=""></span><span>Create a fundraiser</span></a>
@@ -154,8 +154,7 @@ session_start();
 						<h3>Navigation</h3>
 						<ul class="list-unstyled float-left links">
 							<li><a href="#">Home</a></li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Fundraisers</a></li>
+							<li><a href="funderaiser.html">Fundraisers</a></li>
 
 						</ul>
 					</div> <!-- /.widget -->
@@ -175,8 +174,8 @@ session_start();
 					<div class="widget">
 						<h3>Account</h3>
 						<ul class="list-unstyled float-left links">
-							<li><a href="#">Create an account</a></li>
-							<li><a href="#">Profile and Settings</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="signin-form.html">Create an account</a></li>
 						</ul>
 					</div> 
 				</div> 
