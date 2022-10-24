@@ -59,9 +59,9 @@ session_start();
                 >
                   <li class="active"><a href="index.html">Home</a></li>
                   <li><a href="login.html">Account</a></li>
-                  <li><a href="funderaiser.html">Funderaisers</a></li>
+                  <li><a href="funderaiser.html">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
-                  <li><a href="php\logout.php">Logout</a></li>
+                  	<li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
                 </ul>
               </div>
@@ -235,7 +235,7 @@ session_start();
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
+                <a href="signin-form.html"
                   ><img
                     src="images/donate1.jpg"
                     alt="Image"
