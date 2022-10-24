@@ -52,7 +52,7 @@ session_start();
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="login.html">Account</a></li>
-								<li><a href="funderaiser.html">Funderaisers</a></li>
+								<li><a href="fundraiser.html">Fundraisers</a></li>
 								<?php if (isset($_SESSION["user_id"])): ?>
 									<li><a href="php\logout.php">Logout</a></li>
 								<?php endif; ?>
