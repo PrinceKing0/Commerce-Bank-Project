@@ -17,7 +17,6 @@ function otpCheck($sqliThing) {
 }
 
 function userCheck($sqliThing, $userArr) {
-    $tempOtp = rand(100,999);
     $result = mysqli_query($sqliThing, "SELECT * FROM otp_table WHERE userId='$userArr[id]'");
     $num_rows = mysqli_num_rows($result);
     if ($num_rows) {
@@ -37,7 +36,7 @@ if (!$user) {
 }
 
 if ($isInvalid) {
-    header("Location: /otp-wrong.html");
+    header("Location: /forgotemail-wrong.html");
 }
 else {
     $userId = $user["id"];
@@ -55,6 +54,7 @@ else {
             }
             mysqli_stmt_bind_param($stmt, "ii", $otp, $userId);
             mysqli_stmt_execute($stmt);
+            header("Location: /otp-page.html");
         }
         else {
             $sqlInsert = "INSERT INTO otp_table (userId, otp)
@@ -65,6 +65,7 @@ else {
             }
             mysqli_stmt_bind_param($stmt, "ii", $userId, $otp);
             mysqli_stmt_execute($stmt);
+            header("Location: /otp-page.html");
         }
     }
     else {
