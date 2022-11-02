@@ -64,8 +64,7 @@ if (passCheck($newPassNoHash)) {
             mysqli_stmt_execute($stmt);
             $sql = "DELETE FROM otp_table WHERE userId='".$userTableId."'";
             mysqli_query($mysqli, $sql);
-            echo $userTableId;
-            //header("Location: /login.html");
+            header("Location: /login.html");
         }
         else {
             echo "Bad Id";
