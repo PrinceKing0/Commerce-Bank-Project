@@ -7,6 +7,7 @@ while($row = mysqli_fetch_array($result1)) {
     $name[] = $row['name'];
     $amount[] = $row['amount'];
     $perGoal[] = ($row['amount'] / $row['goal']) * 100;
+    $perId[] = $row['id'];
 }
 ?>
 <!DOCTYPE html>
@@ -66,8 +67,12 @@ while($row = mysqli_fetch_array($result1)) {
                   class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
                 >
                   <li class="active"><a href="index.php">Home</a></li>
-                  <li><a href="login.html">Account</a></li>
-                  <li><a href="fundraiser.html">Fundraisers</a></li>
+                  <?php if (isset($_SESSION["user_id"])): ?>
+                  	<li><a href="settings.html">Account</a></li>
+                  <?php else: ?>
+                    <li><a href="login.html">Account</a></li>
+                  <?php endif; ?>
+                  <li><a href="#features-slider-nav">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
                   	<li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
@@ -100,10 +105,6 @@ while($row = mysqli_fetch_array($result1)) {
             <h1 class="heading text-white mb-2" data-aos="fade-up">
               Give a helping hand to those who need it!
             </h1>
-            <p data-aos="fade-up" class="mb-5 text-white lead text-white-50">
-              "There is no exercise better for the heart than reaching down and
-              lifting people up."
-            </p>
             <p data-aos="fade-up" data-aos-delay="100">
               <a
                 href="#"
@@ -204,6 +205,7 @@ while($row = mysqli_fetch_array($result1)) {
             <div class="item">
               <div class="causes-item bg-white">
                 <div class="px-4 pb-5 pt-3">
+                  <img class="img-fluid mb-4 rounded" src="images/donate1.jpg" alt="Image">
                   <h3><a href="#"><?php echo $name[0]?></a></h3>
 
                   <div class="progress mb-2">
@@ -215,9 +217,12 @@ while($row = mysqli_fetch_array($result1)) {
                     <div>$<?php echo $amount[0]?></div>
                     <div>$<?php echo $goal[0]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[0]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -225,6 +230,7 @@ while($row = mysqli_fetch_array($result1)) {
             <div class="item">
               <div class="causes-item bg-white">
                 <div class="px-4 pb-5 pt-3">
+                <img class="img-fluid mb-4 rounded" src="images/donate2.jpg" alt="Image">
                   <h3><a href="#"><?php echo $name[1]?></a></h3>
 
                   <div class="progress mb-2">
@@ -236,9 +242,12 @@ while($row = mysqli_fetch_array($result1)) {
                     <div>$<?php echo $amount[1]?></div>
                     <div>$<?php echo $goal[1]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[1]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -246,6 +255,7 @@ while($row = mysqli_fetch_array($result1)) {
             <div class="item">
               <div class="causes-item bg-white">
                 <div class="px-4 pb-5 pt-3">
+                <img class="img-fluid mb-4 rounded" src="images/donate3.jpg" alt="Image">
                   <h3><a href="#"><?php echo $name[2]?></a></h3>
 
                   <div class="progress mb-2">
@@ -257,9 +267,12 @@ while($row = mysqli_fetch_array($result1)) {
                     <div>$<?php echo $amount[2]?></div>
                     <div>$<?php echo $goal[2]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[2]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -267,6 +280,7 @@ while($row = mysqli_fetch_array($result1)) {
             <div class="item">
               <div class="causes-item bg-white">
                 <div class="px-4 pb-5 pt-3">
+                <img class="img-fluid mb-4 rounded" src="images/donate4.jpg" alt="Image">
                   <h3><a href="#"><?php echo $name[3]?></a></h3>
 
                   <div class="progress mb-2">
@@ -278,9 +292,12 @@ while($row = mysqli_fetch_array($result1)) {
                     <div>$<?php echo $amount[3]?></div>
                     <div>$<?php echo $goal[3]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[3]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -288,6 +305,7 @@ while($row = mysqli_fetch_array($result1)) {
             <div class="item">
               <div class="causes-item bg-white">
                 <div class="px-4 pb-5 pt-3">
+                <img class="img-fluid mb-4 rounded" src="images/donate1.jpg" alt="Image">
                   <h3><a href="#"><?php echo $name[4]?></a></h3>
 
                   <div class="progress mb-2">
@@ -299,64 +317,16 @@ while($row = mysqli_fetch_array($result1)) {
                     <div>$<?php echo $amount[4]?></div>
                     <div>$<?php echo $goal[4]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[3]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section cause-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div
-            class="col-lg-6 text-center"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <span class="subheading mb-3">Fundraisers</span>
-            <h2 class="heading">All Fundraisers</h2>
-            <p>Fundraisers created by users will be displayed here.</p>
-          </div>
-        </div>
-        <div class="widget">
-        <table style="width:80%;">
-        <thead>
-            <tr>
-                <td></td>
-                <td>Name:</td>
-                <td>Goal:</td>
-                <td>Amount:</td>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            $results = mysqli_query($mysqli, "SELECT * FROM fundraisers");
-            while($row = mysqli_fetch_array($results)) {
-            ?>
-                <tr>
-                    <td>
-                        <form action="/php/display-id.php" id="signin" method="post">
-                            <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" <a href="#"
-                                class="trigger-btn" data-toggle="modal">Donate Now
-                            </button>
-                            <input type="hidden" name="rowId" value=<?php echo $row['id']?>>
-                        </form>
-                    </td>
-                    <td><?php echo $row['name']?></td>
-                    <td><?php echo $row['goal']?></td>
-                    <td><?php echo $row['amount']?></td>
-                </tr>
-
-            <?php
-            }
-            ?>
-            </tbody>
-            </table>
         </div>
       </div>
     </div>
