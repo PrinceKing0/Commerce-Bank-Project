@@ -387,7 +387,7 @@ session_start();
               <h3>Account</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="login.html">Login</a></li>
-                <li><a href="signin-form.html">Create an account</a></li>
+                <li><a href="signin-form.html" target="_blank">Create an account</a></li>
               </ul>
             </div>
           </div>
