@@ -29,38 +29,52 @@ if (! mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPwHash);
 
-if (!(strlen($loginPw) >= 8)) {
-    header("Location: /signin-passinvalid.html");
+function passCheck($loginPwin, $loginPwin2) {
+    $checkerPass = false;
+    if (!(strlen($loginPwin) >= 8)) {
+        $checkerPass = true;
+    }
+
+    else if (!(preg_match('/[A-Z]/', $loginPwin) > 0)) {
+        $checkerPass = true;
+    }
+
+    else if (!(preg_match('/[a-z]/', $loginPwin) > 0)) {
+        $checkerPass = true;
+    }
+
+    else if (!(preg_match('`[0-9]`',$loginPwin) > 0)) {
+        $checkerPass = true;
+    }
+
+    else if ($loginPwin != $loginPwin2) {
+        $checkerPass = true;
+    }
+    return $checkerPass;
 }
 
-else if (!(preg_match('/[A-Z]/', $loginPw) > 0)) {
-    header("Location: /signin-passinvalid.html");
-}
-
-else if (!(preg_match('/[a-z]/', $loginPw) > 0)) {
-    header("Location: /signin-passinvalid.html");
-}
-
-else if (!(preg_match('`[0-9]`',$loginPw) > 0)) {
-    header("Location: /signin-passinvalid.html");
-}
-
-else if ($loginPw != $loginPw2) {
-    header("Location: /signin-passinvalid.html");
-}
-
-else {
+function endFunc($stmt1) {
     try {
-        mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt1);
         echo "Record Saved";
         header("Location: /index.php");
+        return true;
     }
     catch (Exception $e) {
         if ($e->getCode() == 1062) {
             echo "Duplicate entry.", "<br>";
         }
         echo $e->getCode();
+        return false;
     }
+}
+
+if (passCheck($loginPw, $loginPw2)) {
+    header("Location: /signin-passinvalid.html");
+}
+
+else {
+    endFunc($stmt);
 }
 
 ?>
