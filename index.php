@@ -49,7 +49,7 @@ session_start();
           <div class="site-navigation">
             <div class="row g-0 align-items-center">
               <div class="col-2">
-                <a href="index.html" class="logo m-0 float-start text-white"
+                <a href="index.php" class="logo m-0 float-start text-white"
                   >OrangeDoorhinge</a
                 >
               </div>
@@ -57,11 +57,11 @@ session_start();
                 <ul
                   class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
                 >
-                  <li class="active"><a href="index.html">Home</a></li>
+                  <li class="active"><a href="index.php">Home</a></li>
                   <li><a href="login.html">Account</a></li>
-                  <li><a href="funderaiser.html">Funderaisers</a></li>
+                  <li><a href="funderaiser.html">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
-                  <li><a href="php\logout.php">Logout</a></li>
+                  	<li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
                 </ul>
               </div>
@@ -235,7 +235,7 @@ session_start();
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
+                <a href="signin-form.html"
                   ><img
                     src="images/donate1.jpg"
                     alt="Image"
