@@ -113,7 +113,7 @@ while($row = mysqli_fetch_array($result1)) {
                 ><span>Donate Now</span></a
               >
               <a
-                href="#"
+                href="createfundraiser.html"
                 class="text-white glightbox d-inline-flex align-items-center"
                 ><span class=""></span><span>Create a fundraiser</span></a
               >
