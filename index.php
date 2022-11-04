@@ -1,5 +1,13 @@
 <?php
 session_start();
+$mysqli = require __DIR__ . "\php\database.php";
+$result1 = mysqli_query($mysqli, "SELECT * FROM fundraisers ORDER BY amount DESC LIMIT 5");
+while($row = mysqli_fetch_array($result1)) {
+    $goal[] = $row['goal'];
+    $name[] = $row['name'];
+    $amount[] = $row['amount'];
+    $perGoal[] = ($row['amount'] / $row['goal']) * 100;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -195,36 +203,17 @@ session_start();
           <div class="features-slider" id="features-slider">
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate4.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Education</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                  <h3><a href="#"><?php echo $name[0]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 25%"
-                      aria-valuenow="25"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      25%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[0]?>%" aria-valuenow="<?php echo $perGoal[0]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$2,500</div>
-                    <div>$10,000</div>
+                    <div>$<?php echo $amount[0]?></div>
+                    <div>$<?php echo $goal[0]?></div>
                   </div>
                   <div>
                     <a href="#" class="btn btn-primary">Donate Now</a>
@@ -235,36 +224,17 @@ session_start();
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="signin-form.html"
-                  ><img
-                    src="images/donate1.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Natural Disaster</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                  <h3><a href="#"><?php echo $name[1]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 60%"
-                      aria-valuenow="60"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      60%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[1]?>%" aria-valuenow="<?php echo $perGoal[1]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$6000</div>
-                    <div>$10,000</div>
+                    <div>$<?php echo $amount[1]?></div>
+                    <div>$<?php echo $goal[1]?></div>
                   </div>
                   <div>
                     <a href="#" class="btn btn-primary">Donate Now</a>
@@ -275,36 +245,17 @@ session_start();
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate2.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Wild Life</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                  <h3><a href="#"><?php echo $name[2]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 82%"
-                      aria-valuenow="82"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      82%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[2]?>%" aria-valuenow="<?php echo $perGoal[2]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$20,500</div>
-                    <div>$25,000</div>
+                    <div>$<?php echo $amount[2]?></div>
+                    <div>$<?php echo $goal[2]?></div>
                   </div>
                   <div>
                     <a href="#" class="btn btn-primary">Donate Now</a>
@@ -315,36 +266,38 @@ session_start();
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate3.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Food</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                  <h3><a href="#"><?php echo $name[3]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 5%"
-                      aria-valuenow="5"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      5%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[3]?>%" aria-valuenow="<?php echo $perGoal[3]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$50</div>
-                    <div>$1,000</div>
+                    <div>$<?php echo $amount[3]?></div>
+                    <div>$<?php echo $goal[3]?></div>
+                  </div>
+                  <div>
+                    <a href="#" class="btn btn-primary">Donate Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="causes-item bg-white">
+                <div class="px-4 pb-5 pt-3">
+                  <h3><a href="#"><?php echo $name[4]?></a></h3>
+
+                  <div class="progress mb-2">
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[4]?>%" aria-valuenow="<?php echo $perGoal[4]?>"aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+
+                  <div class="d-flex mb-4 justify-content-between amount">
+                    <div>$<?php echo $amount[4]?></div>
+                    <div>$<?php echo $goal[4]?></div>
                   </div>
                   <div>
                     <a href="#" class="btn btn-primary">Donate Now</a>
@@ -353,6 +306,57 @@ session_start();
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section cause-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div
+            class="col-lg-6 text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <span class="subheading mb-3">Fundraisers</span>
+            <h2 class="heading">All Fundraisers</h2>
+            <p>Fundraisers created by users will be displayed here.</p>
+          </div>
+        </div>
+        <div class="widget">
+        <table style="width:80%;">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Name:</td>
+                <td>Goal:</td>
+                <td>Amount:</td>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            $results = mysqli_query($mysqli, "SELECT * FROM fundraisers");
+            while($row = mysqli_fetch_array($results)) {
+            ?>
+                <tr>
+                    <td>
+                        <form action="/php/display-id.php" id="signin" method="post">
+                            <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" <a href="#"
+                                class="trigger-btn" data-toggle="modal">Donate Now
+                            </button>
+                            <input type="hidden" name="rowId" value=<?php echo $row['id']?>>
+                        </form>
+                    </td>
+                    <td><?php echo $row['name']?></td>
+                    <td><?php echo $row['goal']?></td>
+                    <td><?php echo $row['amount']?></td>
+                </tr>
+
+            <?php
+            }
+            ?>
+            </tbody>
+            </table>
         </div>
       </div>
     </div>
@@ -387,7 +391,7 @@ session_start();
               <h3>Account</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="login.html">Login</a></li>
-                <li><a href="signin-form.html">Create an account</a></li>
+                <li><a href="signin-form.html" target="_blank">Create an account</a></li>
               </ul>
             </div>
           </div>
