@@ -59,7 +59,7 @@ session_start();
                 >
                   <li class="active"><a href="index.php">Home</a></li>
                   <li><a href="login.html">Account</a></li>
-                  <li><a href="funderaiser.html">Fundraisers</a></li>
+                  <li><a href="fundraiser.html">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
                   	<li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
@@ -365,7 +365,7 @@ session_start();
               <h3>Navigation</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="#">Home</a></li>
-                <li><a href="funderaiser.html">Fundraisers</a></li>
+                <li><a href="fundraiser.html">Fundraisers</a></li>
               </ul>
             </div>
             <!-- /.widget -->
