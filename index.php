@@ -113,11 +113,13 @@ while($row = mysqli_fetch_array($result1)) {
                 <span class="icon-attach_money me-2"></span
                 ><span>Donate Now</span></a
               >
-              <a
-                href="createfundraiser.html"
+              <?php if (isset($_SESSION["user_id"])): ?>
+                <a
+                href="createfundraiser.php"
                 class="text-white glightbox d-inline-flex align-items-center"
                 ><span class=""></span><span>Create a fundraiser</span></a
-              >
+                >
+              <?php endif; ?>
             </p>
           </div>
 
