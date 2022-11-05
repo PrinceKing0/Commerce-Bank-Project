@@ -1,3 +1,8 @@
+<?php
+session_start();
+$fundId = $_POST['fundId'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -163,11 +168,11 @@
           </div>
           <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Billing address</h4>
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" action="php\donate-func.php" id="signin" method="post">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                  <input type="text" name="firstName" class="form-control" id="firstName" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
@@ -175,7 +180,7 @@
     
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  <input type="text" name="lastName" class="form-control" id="lastName" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -241,6 +246,12 @@
                   <div class="invalid-feedback">
                     Zip code required.
                   </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="amount" class="form-label">Amount</label>
+                  <input type="text" name="amount" class="form-control" id="address" placeholder="$Amount" required="">
+                  <input type="hidden" name="fundId" value=<?php echo $fundId?>>
                 </div>
               </div>
     
@@ -312,7 +323,7 @@
     
               <hr class="my-4">
     
-              <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Checkout</button>
             </form>
           </div>
         </div>

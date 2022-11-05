@@ -129,7 +129,10 @@ $perGoal = ($row['amount'] / $row['goal']) * 100;
               <h1 class="h2"><?php echo $row["name"]?></h1>
               <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Donate</button>
+                  <form action="donate.php" id="signin" method="post">
+                    <button class="btn btn-sm btn-outline-secondary">Donate</button>
+                    <input type="hidden" name="fundId" value=<?php echo $fundId?>>
+                  </form>
                 </div>
               </div>
             </div>
