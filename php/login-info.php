@@ -1,5 +1,4 @@
 <?php
-
 $fName = $_POST["fName"];
 $lName = $_POST["lName"];
 $loginName = $_POST["eMail"];
@@ -29,7 +28,7 @@ if (! mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_stmt_bind_param($stmt, "ssss", $fName, $lName, $loginName, $loginPwHash);
 
-function passCheck($loginPwin, $loginPwin2) {
+function passWCheck($loginPwin, $loginPwin2) {
     $checkerPass = false;
     if (!(strlen($loginPwin) >= 8)) {
         $checkerPass = true;
@@ -69,7 +68,7 @@ function endFunc($stmt1) {
     }
 }
 
-if (passCheck($loginPw, $loginPw2)) {
+if (passWCheck($loginPw, $loginPw2)) {
     header("Location: /signin-passinvalid.html");
 }
 

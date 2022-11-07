@@ -107,17 +107,19 @@ while($row = mysqli_fetch_array($result1)) {
             </h1>
             <p data-aos="fade-up" data-aos-delay="100">
               <a
-                href="#"
+                href="#features-slider-nav"
                 class="btn btn-primary me-4 d-inline-flex align-items-center"
               >
                 <span class="icon-attach_money me-2"></span
                 ><span>Donate Now</span></a
               >
-              <a
-                href="createfundraiser.html"
+              <?php if (isset($_SESSION["user_id"])): ?>
+                <a
+                href="createfundraiser.php"
                 class="text-white glightbox d-inline-flex align-items-center"
                 ><span class=""></span><span>Create a fundraiser</span></a
-              >
+                >
+              <?php endif; ?>
             </p>
           </div>
 
