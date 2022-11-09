@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($result1)) {
                   <?php if (isset($_SESSION["user_id"])): ?>
                   	<li><a href="settings.html">Account</a></li>
                   <?php else: ?>
-                    <li><a href="login.html">Account</a></li>
+                    <li><a href="login.html">Login</a></li>
                   <?php endif; ?>
                   <li><a href="#features-slider-nav">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
@@ -102,7 +102,7 @@ while($row = mysqli_fetch_array($result1)) {
             <span class="subheading-white text-white mb-3" data-aos="fade-up"
               >Fundraisers</span
             >
-            <h1 class="heading text-white mb-2" data-aos="fade-up">
+            <h1 class="heading text-white mb-2 quote" data-aos="fade-up">
               Give a helping hand to those who need it!
             </h1>
             <p data-aos="fade-up" data-aos-delay="100">
@@ -363,6 +363,7 @@ while($row = mysqli_fetch_array($result1)) {
               <h3>Account</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="login.html">Login</a></li>
+                <li><a href="settings.html">Account Settings</a></li>
                 <li><a href="signin-form.html" target="_blank">Create an account</a></li>
               </ul>
             </div>
@@ -404,7 +405,6 @@ while($row = mysqli_fetch_array($result1)) {
     <script src="js/glightbox.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
   </body>
 </html>
