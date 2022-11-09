@@ -1,5 +1,14 @@
 <?php
 session_start();
+$mysqli = require __DIR__ . "\php\database.php";
+$result1 = mysqli_query($mysqli, "SELECT * FROM fundraisers ORDER BY amount DESC LIMIT 5");
+while($row = mysqli_fetch_array($result1)) {
+    $goal[] = $row['goal'];
+    $name[] = $row['name'];
+    $amount[] = $row['amount'];
+    $perGoal[] = ($row['amount'] / $row['goal']) * 100;
+    $perId[] = $row['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,23 +105,21 @@ session_start();
             <h1 class="heading text-white mb-2 quote" data-aos="fade-up">
               Give a helping hand to those who need it!
             </h1>
-            <p data-aos="fade-up" class="mb-5 text-white lead text-white-50">
-              "There is no exercise better for the heart than reaching down and
-              lifting people up."
-            </p>
             <p data-aos="fade-up" data-aos-delay="100">
               <a
-                href="#"
+                href="#features-slider-nav"
                 class="btn btn-primary me-4 d-inline-flex align-items-center"
               >
                 <span class="icon-attach_money me-2"></span
                 ><span>Donate Now</span></a
               >
-              <a
-                href="#"
+              <?php if (isset($_SESSION["user_id"])): ?>
+                <a
+                href="createfundraiser.php"
                 class="text-white glightbox d-inline-flex align-items-center"
                 ><span class=""></span><span>Create a fundraiser</span></a
-              >
+                >
+              <?php endif; ?>
             </p>
           </div>
 
@@ -199,160 +206,125 @@ session_start();
           <div class="features-slider" id="features-slider">
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate4.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Education</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                  <img class="img-fluid mb-4 rounded" src="images/donate1.jpg" alt="Image">
+                  <h3><a href="#"><?php echo $name[0]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 25%"
-                      aria-valuenow="25"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      25%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[0]?>%" aria-valuenow="<?php echo $perGoal[0]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$2,500</div>
-                    <div>$10,000</div>
+                    <div>$<?php echo $amount[0]?></div>
+                    <div>$<?php echo $goal[0]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[0]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="signin-form.html"
-                  ><img
-                    src="images/donate1.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Natural Disaster</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                <img class="img-fluid mb-4 rounded" src="images/donate2.jpg" alt="Image">
+                  <h3><a href="#"><?php echo $name[1]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 60%"
-                      aria-valuenow="60"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      60%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[1]?>%" aria-valuenow="<?php echo $perGoal[1]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$6000</div>
-                    <div>$10,000</div>
+                    <div>$<?php echo $amount[1]?></div>
+                    <div>$<?php echo $goal[1]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[1]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate2.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Wild Life</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                <img class="img-fluid mb-4 rounded" src="images/donate3.jpg" alt="Image">
+                  <h3><a href="#"><?php echo $name[2]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 82%"
-                      aria-valuenow="82"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      82%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[2]?>%" aria-valuenow="<?php echo $perGoal[2]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$20,500</div>
-                    <div>$25,000</div>
+                    <div>$<?php echo $amount[2]?></div>
+                    <div>$<?php echo $goal[2]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
-                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[2]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
 
             <div class="item">
               <div class="causes-item bg-white">
-                <a href="#"
-                  ><img
-                    src="images/donate3.jpg"
-                    alt="Image"
-                    class="img-fluid mb-4 rounded"
-                /></a>
                 <div class="px-4 pb-5 pt-3">
-                  <h3><a href="#">Food</a></h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta labore eligendi tempora laudantium voluptate, amet ad
-                    libero facilis nihil officiis.
-                  </p>
+                <img class="img-fluid mb-4 rounded" src="images/donate4.jpg" alt="Image">
+                  <h3><a href="#"><?php echo $name[3]?></a></h3>
 
                   <div class="progress mb-2">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 5%"
-                      aria-valuenow="5"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      5%
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[3]?>%" aria-valuenow="<?php echo $perGoal[3]?>"aria-valuemin="0" aria-valuemax="100">
                     </div>
                   </div>
 
                   <div class="d-flex mb-4 justify-content-between amount">
-                    <div>$50</div>
-                    <div>$1,000</div>
+                    <div>$<?php echo $amount[3]?></div>
+                    <div>$<?php echo $goal[3]?></div>
                   </div>
-                  <div>
-                    <a href="#" class="btn btn-primary">Donate Now</a>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[3]?>>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="causes-item bg-white">
+                <div class="px-4 pb-5 pt-3">
+                <img class="img-fluid mb-4 rounded" src="images/donate1.jpg" alt="Image">
+                  <h3><a href="#"><?php echo $name[4]?></a></h3>
+
+                  <div class="progress mb-2">
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $perGoal[4]?>%" aria-valuenow="<?php echo $perGoal[4]?>"aria-valuemin="0" aria-valuemax="100">
+                    </div>
                   </div>
+
+                  <div class="d-flex mb-4 justify-content-between amount">
+                    <div>$<?php echo $amount[4]?></div>
+                    <div>$<?php echo $goal[4]?></div>
+                  </div>
+                  <form action="fundraiser.php" id="signin" method="post">
+                    <div>
+                      <button class="btn btn-primary">Donate Now</button>
+                      <input type="hidden" name="fundId" value=<?php echo $perId[3]?>>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -369,7 +341,7 @@ session_start();
               <h3>Navigation</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="#">Home</a></li>
-                <li><a href="funderaiser.html">Fundraisers</a></li>
+                <li><a href="fundraiser.html">Fundraisers</a></li>
               </ul>
             </div>
             <!-- /.widget -->

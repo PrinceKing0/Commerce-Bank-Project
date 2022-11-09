@@ -208,6 +208,10 @@ a,
   position: relative;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* .counter {
   padding: 40px;
   border-radius: 10px;
