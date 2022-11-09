@@ -58,8 +58,12 @@ session_start();
                   class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
                 >
                   <li class="active"><a href="index.php">Home</a></li>
-                  <li><a href="login.html">Account</a></li>
-                  <li><a href="funderaiser.html">Fundraisers</a></li>
+                  <?php if (isset($_SESSION["user_id"])): ?>
+                  	<li><a href="settings.html">Account</a></li>
+                  <?php else: ?>
+                    <li><a href="login.html">Login</a></li>
+                  <?php endif; ?>
+                  <li><a href="#features-slider-nav">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
                   	<li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
@@ -89,7 +93,7 @@ session_start();
             <span class="subheading-white text-white mb-3" data-aos="fade-up"
               >Fundraisers</span
             >
-            <h1 class="heading text-white mb-2" data-aos="fade-up">
+            <h1 class="heading text-white mb-2 quote" data-aos="fade-up">
               Give a helping hand to those who need it!
             </h1>
             <p data-aos="fade-up" class="mb-5 text-white lead text-white-50">
@@ -387,6 +391,7 @@ session_start();
               <h3>Account</h3>
               <ul class="list-unstyled float-left links">
                 <li><a href="login.html">Login</a></li>
+                <li><a href="settings.html">Account Settings</a></li>
                 <li><a href="signin-form.html" target="_blank">Create an account</a></li>
               </ul>
             </div>
@@ -428,7 +433,6 @@ session_start();
     <script src="js/glightbox.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
   </body>
 </html>
