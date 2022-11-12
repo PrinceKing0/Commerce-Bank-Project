@@ -68,7 +68,7 @@ while($row = mysqli_fetch_array($result1)) {
                 >
                   <li class="active"><a href="index.php">Home</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
-                  	<li><a href="settings.html">Account</a></li>
+                  	<li><a href="settings.php">Account</a></li>
                   <?php else: ?>
                     <li><a href="login.html">Login</a></li>
                   <?php endif; ?>
