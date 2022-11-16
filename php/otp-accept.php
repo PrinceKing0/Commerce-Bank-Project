@@ -35,6 +35,10 @@ function passCheck($inPass) {
     else if (!(preg_match('/[A-Z]/', $inPass) > 0)) {
         return false;
     }
+
+    else if (!(preg_match('/\W/', $inPass) > 0)) {
+        return false;
+    }
     
     else if (!(preg_match('/[a-z]/', $inPass) > 0)) {
         return false;
@@ -76,5 +80,8 @@ if (passCheck($newPassNoHash)) {
     }
 }
 else {
-    header("Location: /bad-resetpass.html");
+    //header("Location: /bad-resetpass.html");
+    echo $newPassNoHash;
+    echo "<br>";
+    echo preg_match('/\W/', $newPassNoHash);
 }
