@@ -39,8 +39,7 @@
                   class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
                 >
                   <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="login.html">Account</a></li>
-                  <li><a href="funderaiser.html">Funderaisers</a></li>
+                  <li><a href="fundraiser.html">Fundraisers</a></li>
                   <?php if (isset($_SESSION["user_id"])): ?>
                   <li><a href="php\logout.php">Logout</a></li>
                   <?php endif; ?>
@@ -139,16 +138,10 @@
                     <input type="text" class="form-control" />
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Phone number</label>
-                    <input type="text" class="form-control" />
-                  </div>
-                </div>
               </div>
               <div>
                 <button class="btn btn-primary">Update</button>
-                <a href="index.html">
+                <a href="index.php">
                   <button class="btn btn-light">Cancel</button>
                 </a>
               </div>
@@ -184,7 +177,7 @@
               </div>
               <div>
                 <button class="btn btn-primary">Update</button>
-                <a href="index.html">
+                <a href="index.php">
                   <button class="btn btn-light">Cancel</button>
                 </a>
               </div>
@@ -197,5 +190,6 @@
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/bootstrapcdn.min.js"></script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>

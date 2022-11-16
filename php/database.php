@@ -1,5 +1,4 @@
 <?php
-function dataGet () {
     $host = "localhost";
     $dbname = "classproj_db1";
     $username = "root";
@@ -12,6 +11,3 @@ function dataGet () {
     }
 
     return $mysqli;
-}
-
-return dataGet();
