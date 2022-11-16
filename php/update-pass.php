@@ -22,6 +22,10 @@ function passCheck($inPass1, $inPass2) {
     else if (!(preg_match('/[A-Z]/', $inPass1) > 0)) {
         return false;
     }
+
+    else if (!(preg_match('/\W/', $inPass1) > 0)) {
+        return false;
+    }
     
     else if (!(preg_match('/[a-z]/', $inPass1) > 0)) {
         return false;

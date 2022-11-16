@@ -38,6 +38,10 @@ function passWCheck($loginPwin, $loginPwin2) {
         $checkerPass = true;
     }
 
+    else if (!(preg_match('/\W/', $loginPwin) > 0)) {
+        $checkerPass = true;
+    }
+
     else if (!(preg_match('/[a-z]/', $loginPwin) > 0)) {
         $checkerPass = true;
     }

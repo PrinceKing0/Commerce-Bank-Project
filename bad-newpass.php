@@ -174,7 +174,7 @@ $userId = $_SESSION["user_id"];
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                        <em>Password must have at least 8 characters, an uppercase letter, a lowercase letter, a number, and must match.<br></em>
+                        <em>Password must have at least 8 characters, an uppercase letter, a lowercase letter, a number, a special character, and must match.<br></em>
                         <label>New password</label>
                         <input name="newPass1" type="password" class="form-control" />
                         <input type="hidden" name="userId" value=<?php echo $userId?>>

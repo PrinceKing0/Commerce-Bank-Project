@@ -35,6 +35,10 @@ function passCheck($inPass) {
     else if (!(preg_match('/[A-Z]/', $inPass) > 0)) {
         return false;
     }
+
+    else if (!(preg_match('/\W/', $inPass) > 0)) {
+        return false;
+    }
     
     else if (!(preg_match('/[a-z]/', $inPass) > 0)) {
         return false;
