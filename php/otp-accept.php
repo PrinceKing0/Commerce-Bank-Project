@@ -80,8 +80,5 @@ if (passCheck($newPassNoHash)) {
     }
 }
 else {
-    //header("Location: /bad-resetpass.html");
-    echo $newPassNoHash;
-    echo "<br>";
-    echo preg_match('/\W/', $newPassNoHash);
+    header("Location: /bad-resetpass.html");
 }
