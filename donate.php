@@ -114,8 +114,8 @@ $fundId = $_POST['fundId'];
       <main>
         <div class="py-5 text-center">
           <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-          <h2>Creation Form</h2>
-          <p class="lead">Here you can create your own fundraiser page.</p>
+          <h2>Donation Form</h2>
+          <p class="lead">Here you can donate to a fundraiser.</p>
         </div>
     
         <div class="row g-5">
